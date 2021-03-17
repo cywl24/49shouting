@@ -516,9 +516,10 @@ var producGame = {
         if (data) {
             console.info(data.msg)
             if (data.msg.indexOf('防刷策略接口校验不通过') !== -1) {
-                throw new Error('出现【防刷策略接口校验不通过】, 取消本次执行')
+               // throw new Error('出现【防刷策略接口校验不通过】, 取消本次执行')
+               console.error('获取奖励失败')
             }
-            console.reward('flow', 100)
+            console.reward('flow', '100m')
         } else {
             console.error('获取奖励失败')
         }
@@ -545,7 +546,8 @@ var producGame = {
         if (data) {
             console.info(data.msg)
             if (data.msg.indexOf('防刷策略接口校验不通过') !== -1) {
-                throw new Error('出现【防刷策略接口校验不通过】, 取消本次执行')
+            //    throw new Error('出现【防刷策略接口校验不通过】, 取消本次执行')
+            console.error('获取奖励失败')
             }
             console.reward('integral', 5)
         } else {
@@ -641,8 +643,8 @@ var producGame = {
                 ...options,
                 taskCenterId: today_task.id
             })
-            console.reward('flow', 200)
-            console.info('领取完成今日任务流量+200')
+            console.reward('flow', '200m')
+            console.info('领取完成今日任务流量+200m')
         } else if (today_task.reachState === '2') {
             console.info('每日日常任务已完成')
         }
